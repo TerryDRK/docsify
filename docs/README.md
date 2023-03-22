@@ -1,4 +1,6 @@
 # Build a personal website
+
+## Intro
 One day I was browsing Google, and I suddenly found that Oracle offers free servers! This caught me instantly as I always want to maintain a personal website. This article is about how I set up this website, and what I have on it.
 
 While the process is relatively smooth and simple, I think it could be useful for anyone who's trying to set up their personal websites. Also, this note can also work as my reference later.
