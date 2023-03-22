@@ -1,5 +1,3 @@
-# Build a personal website
-
 ## Intro
 One day I was browsing Google, and I suddenly found that Oracle offers free servers! This caught me instantly as I always want to maintain a personal website. This article is about how I set up this website, and what I have on it.
 
@@ -16,6 +14,3 @@ This website is much more than just this tech note. I have the following service
 Where are a few things I am planning to do with this webpage:
 - 🏠 A **homepage** to work as the navigation,
 - ...
-
-## Server & environment setup
-In this part, I am going to walk you through the process of deploying the free Oracle Cloud instance, and how I set up the server environment.
