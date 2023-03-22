@@ -1,17 +1,3 @@
-# This is title 1
+# Tech notes by Terry
 
-!!!!!
-
-## This is subtitle 1
-111
-
-## This is subtitle 2
-222
-
-# This is title 2
-
-## This is subtitle 1
-111
-
-## This is subtitle 2
-222
+Thanks for visiting! You can visit my tech notes at https://doc.terry-du.xyz.
