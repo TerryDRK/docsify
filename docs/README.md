@@ -1,24 +1,9 @@
-# Build a personal website
+# Terry's Tech Notes
 
-## Intro
-One day I was browsing Google, and I suddenly found that Oracle offers free servers! This caught me instantly as I always want to maintain a personal website. This article is about how I set up this website, and what I have on it.
+## Hello!!!!!!
+Thank you for stopping by! This website is a place where I post my tech notes. These notes are for my reference, but I will be more than happy if these can come to your help as well 🎉
 
-While the process is relatively smooth and simple, I think it could be useful for anyone who's trying to set up their personal websites. Also, this note can also work as my reference later.
+If you find the notes useful, please click on the GitHub logo in the top-right corner (or click [here](https://github.com/TerryDRK/docsify)) and give me a star ✨
 
-### Current services
-This website is much more than just this tech note. I have the following services running on it now:
-- 🤵 My **portfolio** webpage, previously written with Angular and Bootstrap, as well as deploying my education projects,
-- 📃 **Docsify**, as you see, as my tech notes,
-- 🎬 **Emby** as a private music & movie library,
-- ☁️ **FileBrowser** as a personal cloud drive,
-
-### TODO list
-Where are a few things I am planning to do with this webpage:
-- 🏠 A **homepage** to work as the navigation,
-- ...
-
-## Server & environment setup
-In this part, I am going to walk you through the process of deploying the free Oracle Cloud instance, and how I set up the server environment.
-
-# More To Come...
-Thank you for stopping by! Please expect to see more notes 😄
+## More To Come...
+The website has just started. Please expect to see more notes 😄 You can check out the notes through the navbar on the left!
