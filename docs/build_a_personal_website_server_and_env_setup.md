@@ -16,8 +16,8 @@ Once the system is up running, you can use SSH to access your new server. Rememb
 
 When configuring the server instance, you will normally have 3 options:
 
-- Username + password: This is the one that is the easiest to understand - use a username + password pair to log into your server. Use `ssh username@1.2.3.4`, and you will be asked to enter the password.
-- PEM: This will generate a pem file (or text content of it) for you to connect to the server. In this case, use `ssh -i /path/to/your.pem username@1.2.3.4` to connect to the server.
-- Public key: In this case, your ssh public key will be added to the server's authorized users, allowing you to access the server without password or PEM. To use this method, you need to provide your `~/.ssh/id_rsa.pub` when setting up the server. If you find yourself not having this file (or the entire directory), you can always generate it with `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`. Refer to [this page](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for more detailed instructions.
+- **Username + password:** This is the one that is the easiest to understand - use a username + password pair to log into your server. Use `ssh username@1.2.3.4`, and you will be asked to enter the password.
+- **PEM:** This will generate a pem file (or text content of it) for you to connect to the server. In this case, use `ssh -i /path/to/your.pem username@1.2.3.4` to connect to the server.
+- **Public key:** In this case, your ssh public key will be added to the server's authorized users, allowing you to access the server without password or PEM. To use this method, you need to provide your `~/.ssh/id_rsa.pub` when setting up the server. If you find yourself not having this file (or the entire directory), you can always generate it with `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`. Refer to [this page](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for more detailed instructions.
 
 **TO BE CONTINUED...**
