@@ -1,5 +1,3 @@
-<!-- docs/README.md -->
-
 ## Welcome! <!-- {docsify-ignore} -->
 Thank you for stopping by! This website is a place where I post my tech notes. These notes are for my reference, but I will be more than happy if these can come to your help as well 🎉
 
