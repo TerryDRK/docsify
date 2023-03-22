@@ -11,6 +11,6 @@ This website is much more than just this tech note. I have the following service
 - ☁️ **FileBrowser** as a personal cloud drive,
 
 ## TODO list <!-- {docsify-ignore} -->
-Where are a few things I am planning to do with this webpage:
+There are a few things I am planning to do with this webpage:
 - 🏠 A **homepage** to work as the navigation,
 - ...
