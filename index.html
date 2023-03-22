@@ -6,13 +6,18 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
 </head>
+<title>Terry's Tech Notes</title>
 <body>
 <div id="app">Loading...</div>
 <script>
     window.$docsify = {
         repo: 'https://github.com/TerryDRK/docsify',
-        homepage:
-            'https://github.com/TerryDRK/docsify/master/docs/README.md',
+        // basePath: './docs',
+        basePath: 'https://raw.githubusercontent.com/TerryDRK/docsify/master/docs', // change to this when CORS is solved.
+        maxLevel: 3,
+        name: 'Terry\'s Tech Notes',
+        mergeNavbar: true,
+        notFoundPage: true,
     }
 </script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>

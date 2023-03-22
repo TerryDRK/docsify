@@ -1,17 +1,22 @@
-# This is title 1
+# Build a personal website
+One day I was browsing Google, and I suddenly found that Oracle offers free servers! This caught me instantly as I always want to maintain a personal website. This article is about how I set up this website, and what I have on it.
 
-!!!!!
+While the process is relatively smooth and simple, I think it could be useful for anyone who's trying to set up their personal websites. Also, this note can also work as my reference later.
 
-## This is subtitle 1
-111
+### Current services
+This website is much more than just this tech note. I have the following services running on it now:
+- 🤵 My **portfolio** webpage, previously written with Angular and Bootstrap, as well as deploying my education projects,
+- 📃 **Docsify**, as you see, as my tech notes,
+- 🎬 **Emby** as a private music & movie library,
+- ☁️ **FileBrowser** as a personal cloud drive,
 
-## This is subtitle 2
-222
+### TODO list
+Where are a few things I am planning to do with this webpage:
+- 🏠 A **homepage** to work as the navigation,
+- ...
 
-# This is title 2
+## Server & environment setup
+In this part, I am going to walk you through the process of deploying the free Oracle Cloud instance, and how I set up the server environment.
 
-## This is subtitle 1
-111
-
-## This is subtitle 2
-222
+# More To Come...
+Thank you for stopping by! Please expect to see more notes 😄
