@@ -56,5 +56,3 @@ docker version
 ```
 
 You should see the version info of Docker without error.
-
-**TO BE CONTINUED...**
