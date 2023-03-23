@@ -35,4 +35,26 @@ The inbound rules I set for my server is:
 
 You can see that the only ports I open up for services are 80 and 443. How are these two ports going to host all the services we plan to use, you may ask? This answer will be asked in the [next chapter](/build_a_personal_website_domain_https_and_reverse_proxy), where we are going to talk about domain, HTTPS and reverse proxy. For now, we are going to leave it like this.
 
+## Environment setup
+Once we connect to the server, we can start setting up the environment need for our server.
+
+As we are planning to run multiple services, it is important that we can have each of them run separately so that if you mis-configure one, you don't break the other services, or even the system itself. For this purpose, we use [Docker](https://www.docker.com). Docker provides easy container management, while ensures isolation between containers.  Besides, for easy container configuration, we also use [Docker Compose](https://docs.docker.com/compose/compose-file/).
+
+To install these, we run the following:
+
+```shell
+sudo apt update
+sudo apt-get update
+sudo apt install docker
+sudo apt install docker-compose
+```
+
+To check if you installed correctly, you can run:
+
+```shell
+docker version
+```
+
+You should see the version info of Docker without error.
+
 **TO BE CONTINUED...**
