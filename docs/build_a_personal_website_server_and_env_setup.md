@@ -42,7 +42,7 @@ As we are planning to run multiple services, it is important that we can have ea
 
 To install these, we run the following:
 
-```shell
+```bash
 sudo apt update
 sudo apt-get update
 sudo apt install docker
@@ -51,7 +51,7 @@ sudo apt install docker-compose
 
 To check if you installed correctly, you can run:
 
-```shell
+```bash
 docker version
 ```
 
