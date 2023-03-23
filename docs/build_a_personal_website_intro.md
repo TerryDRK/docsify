@@ -8,7 +8,7 @@ This website is much more than just this tech note. I have the following service
 - 🤵 My **portfolio** webpage, previously written with Angular and Bootstrap, as well as deploying my education projects,
 - 📃 **Docsify**, as you see, as my tech notes,
 - 🎬 **Emby** as a private music & movie library,
-- ☁️ **FileBrowser** as a personal cloud drive,
+- ☁️ **FileBrowser** as a personal cloud drive.
 
 ## TODO list <!-- {docsify-ignore} -->
 There are a few things I am planning to do with this webpage:

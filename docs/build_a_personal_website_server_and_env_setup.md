@@ -52,7 +52,7 @@ sudo apt install docker-compose
 To check if you installed correctly, you can run:
 
 ```bash
-docker version
+sudo docker version
 ```
 
 You should see the version info of Docker without error.
