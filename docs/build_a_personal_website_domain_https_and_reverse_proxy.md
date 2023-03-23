@@ -152,4 +152,10 @@ Reload Nginx, and visit `https://example.com`, you shall see Nginx home page.
 
 *If you are using Cloudflare proxy, you can go to your domain's `SSL/TLS` section, and change the encryption mode to `Full (strict)`.*
 
+### Other service setup (used later)
+When configuring other services later, we have 2 ways: either to run it on `https://example.com/new-service`, or on `https://new-service.example.com`. We are going to cover both here.
+
+#### Method 1: `https://example.com/new-service`
+Say we have a service running on port 8080.
+
 **TO BE CONTINUED...**
