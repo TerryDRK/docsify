@@ -35,9 +35,7 @@ We start Nginx and Certbot with Docker that we just installed in the [previous c
 
 ```yaml
 # docker-compose.yml
-
 version: '3'
-
 services:
   nginx:
     image: nginx:latest
@@ -67,11 +65,12 @@ Once Nginx and Certbot is ready to use, let's try to enable HTTPS for `example.c
 In order to do so, add the following configuration file in `./nginx/conf/`:
 
 ```nginx
+# example.com.conf
 server {
     listen 80;
     listen [::]:80;
 
-    server_name [YOUR_DOMAIN_NAME] www.[YOUR_DOMAIN_NAME];
+    server_name example.com www.example.com;
     server_tokens off;
 
     location /.well-known/acme-challenge/ {
@@ -79,7 +78,7 @@ server {
     }
 
     location / {
-        return 301 https://[YOUR_DOMAIN_NAME]$request_uri;
+        return 301 https://example.com$request_uri;
     }
 }
 ```
