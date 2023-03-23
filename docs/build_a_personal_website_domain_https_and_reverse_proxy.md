@@ -112,7 +112,7 @@ sudo docker-compose run --rm certbot certonly --webroot --webroot-path /var/www/
 ```
 
 #### Configure port 443 for HTTPS
-Since we now have the certificates for `example.com`, we can set up port 443, which is the HTTPS port. Edit the previous `./nginx/conf/example.com.conf` file":
+Since we now have the certificates for `example.com`, we can set up port 443, which is the HTTPS port. Edit the previous `./nginx/conf/example.com.conf` file:
 
 ```nginx
 # example.com.conf
@@ -156,6 +156,125 @@ Reload Nginx, and visit `https://example.com`, you shall see Nginx home page.
 When configuring other services later, we have 2 ways: either to run it on `https://example.com/new-service`, or on `https://new-service.example.com`. We are going to cover both here.
 
 #### Method 1: `https://example.com/new-service`
-Say we have a service running on port 8080.
+Say we have a service running on port 8080. If we want to serve it to `https://example.com/new-service`, we just need to modify the previous `./nginx/conf/example.com.conf` file:
 
-**TO BE CONTINUED...**
+```nginx
+# example.com.conf
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name example.com www.example.com;
+    server_tokens off;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://example.com$request_uri;
+    }
+}
+
+server {
+    listen 443 default_server ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name example.org;
+
+    ssl_certificate /etc/nginx/ssl/live/example.org/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/example.org/privkey.pem;
+    
+    location /new-service {
+        proxy_pass http://127.0.0.1:8080;
+    }
+    
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+    }
+}
+```
+
+This is a simpler way, as no new certificate is needed. After reloading, we can access our new service at `https://example.com/new-service`.
+
+#### Method 2: `https://new-service.example.com`
+First, the domain `new-service.example.com` should be directed to our server. To do so, go to [Cloudflare](https://www.cloudflare.com), and add a new DNS record:
+
+| Type  | Name        | Content       |
+|-------|-------------|---------------|
+| CNAME | new-service | `example.com` |
+
+This means "`new-service.example.com` is an alias of `example.com`".
+
+You may notice that both `new-service.example.com` and `www.example.com` is an alias of `example.com`. It is correct, since Nginx will manage the reverse proxy of the requests, when properly configured. The next section will cover the Nginx configuration needed for this method.
+
+##### Add new config file to Nginx
+When using this method, a new certificate for `new-service.example.com` is needed. So, repeat the certificate generation steps:
+
+```nginx
+# new-service.conf
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name new-service.example.com www.new-service.example.com;
+    server_tokens off;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://new-service.example.com$request_uri;
+    }
+}
+```
+
+##### Generate certificates
+Same thing, do dry-run first:
+```bash
+sudo docker-compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d new-service.example.com
+```
+
+Then, remove the `--dry-run` option:
+
+```bash
+sudo docker-compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ -d new-service.example.com
+```
+
+##### Configure HTTPS
+Modify `./nginx/conf/new-service.conf`:
+
+```nginx
+# example.com.conf
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name new-service.example.com www.new-service.example.com;
+    server_tokens off;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://new-service.example.com$request_uri;
+    }
+}
+
+server {
+    listen 443 default_server ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name example.org;
+
+    ssl_certificate /etc/nginx/ssl/live/new-service.example.org/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/new-service.example.org/privkey.pem;
+    
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+    }
+}
+```
