@@ -6,4 +6,5 @@
   - [Intro](/build_a_personal_website_intro)
   - [Server & environment setup](/build_a_personal_website_server_and_env_setup)
   - [Domain, HTTPS and reverse proxy](/build_a_personal_website_domain_https_and_reverse_proxy)
-  - [Setting up services](build_a_personal_website_services.md)
+  - [Setting up services](/build_a_personal_website_services)
+  - [Summary](/build_a_personal_website_summary)
